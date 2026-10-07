@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Buddy Partner Program | Earn Referral Rewards</title>
+    <meta name="description" content="Join the Your Online Buddy Partner Program. Generate a unique discount code, help local businesses get online, and earn instant cash rewards of upto Rs.2000/- for every referral.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="logo.png?v=2">
+    <link rel="shortcut icon" href="logo.png?v=2">
+    
+    <!-- Google Font (Safe for GitHub Pages) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+        body { background-color: #f9fafb; color: #111827; }
+
+        header { background-color: #ffffff; padding: 20px 5%; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 10px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 100; }
+        
+        .logo { font-size: 1.5rem; font-weight: 800; color: #111827; text-decoration: none; display: flex; align-items: center; gap: 10px; }
+        .logo span { color: #4f46e5; }
+        .logo img { height: 35px; width: auto; border-radius: 6px; }
+        
+        nav ul { list-style: none; display: flex; gap: 25px; }
+        nav a { text-decoration: none; color: #4b5563; font-weight: 600; font-size: 0.95rem; transition: color 0.3s; }
+        nav a:hover, nav a.active { color: #4f46e5; }
+        
+        .page-header { background-color: #111827; color: #ffffff; padding: 60px 5%; text-align: center; border-bottom: 6px solid #4f46e5; }
+        .page-header h1 { font-size: 2.5rem; font-weight: 800; margin-bottom: 15px; }
+        .page-header p { font-size: 1.1rem; color: #d1d5db; max-width: 600px; margin: 0 auto; }
+
+        .content-section { padding: 60px 5%; max-width: 1000px; margin: 0 auto; text-align: center; }
+        
+        .rewards-banner { background-color: #4f46e5; color: #ffffff; padding: 30px; border-radius: 12px; margin-bottom: 40px; }
+        .rewards-banner h2 { margin-bottom: 20px; font-size: 1.8rem; }
+        .rewards-grid { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+        .reward-tier { background: rgba(255,255,255,0.1); padding: 15px; border-radius: 8px; min-width: 180px; }
+        .reward-tier h4 { font-size: 1rem; margin-bottom: 5px; color: #e0e7ff; }
+        .reward-tier p { font-size: 1.5rem; font-weight: 800; margin: 0; }
+
+        /* Form Styling */
+        .form-container { background: #ffffff; padding: 40px; border-radius: 12px; border: 1px solid #e5e7eb; max-width: 650px; margin: 0 auto; text-align: left; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+        .form-container h3 { margin-bottom: 10px; font-size: 1.5rem; text-align: center; }
+        .form-container p { color: #4b5563; margin-bottom: 25px; text-align: center; font-size: 0.95rem; }
+        
+        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 20px; }
+        .full-width { grid-column: 1 / -1; }
+        
+        .form-group label { display: block; margin-bottom: 6px; font-weight: 600; font-size: 0.85rem; color: #374151; }
+        .form-group label span { color: #9ca3af; font-weight: 400; font-size: 0.8rem; }
+        .form-group input { width: 100%; padding: 10px 12px; border: 1px solid #d1d5db; border-radius: 6px; font-size: 0.95rem; }
+        .form-group input:focus { outline: none; border-color: #4f46e5; box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1); }
+        
+        .btn-submit { width: 100%; padding: 15px; background: #4f46e5; color: white; border: none; font-weight: 800; font-size: 1.1rem; border-radius: 6px; cursor: pointer; transition: background 0.3s; }
+        .btn-submit:hover { background: #4338ca; }
+        .btn-submit:disabled { background: #9ca3af; cursor: not-allowed; }
+
+        /* Code Result Styling */
+        #codeResult { display: none; text-align: center; padding: 30px; background: #ffffff; border: 2px solid #10b981; border-radius: 12px; margin: 0 auto; max-width: 700px; box-shadow: 0 10px 15px rgba(16, 185, 129, 0.1); }
+        #codeResult h3 { color: #065f46; margin-bottom: 10px; font-size: 1.5rem; }
+        .generated-code { font-size: 2.5rem; font-weight: 900; color: #10b981; letter-spacing: 2px; margin-bottom: 15px; }
+        
+        .share-box { background: #f3f4f6; padding: 20px; border-radius: 8px; border: 1px solid #e5e7eb; margin-top: 20px; text-align: left; }
+        .share-box label { font-weight: 700; color: #111827; display: block; margin-bottom: 10px; font-size: 0.95rem; }
+        .share-box textarea { width: 100%; height: 160px; padding: 12px; border: 1px solid #d1d5db; border-radius: 6px; font-size: 0.9rem; font-family: 'Inter', sans-serif; resize: none; margin-bottom: 15px; color: #374151; background: #ffffff; }
+        .btn-copy { display: inline-flex; align-items: center; justify-content: center; width: 100%; padding: 12px; background: #10b981; color: white; border: none; font-weight: 700; font-size: 1rem; border-radius: 6px; cursor: pointer; transition: background 0.3s; }
+        .btn-copy:hover { background: #059669; }
+
+        footer { background-color: #111827; color: #9ca3af; text-align: center; padding: 40px 5%; margin-top: 40px; }
+        @media (max-width: 768px) { nav ul { display: none; } .form-grid { grid-template-columns: 1fr; } }
+    </style>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0QXER8HRQJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-0QXER8HRQJ');
+</script>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo">
+            <img src="logo.png?v=2" alt="Your Online Buddy Logo">
+            Your Online <span>Buddy</span>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="packages.html">Packages</a></li>
+                <!-- <li><a href="portfolio.html">Portfolio</a></li> -->
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="partner.html" class="active">Partner Program</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="page-header">
+        <h1>The Buddy Partner Program</h1>
+        <p>Register below to generate your unique code and start earning instant cash referrals.</p>
+    </div>
+
+    <section class="content-section">
+        
+        <div class="rewards-banner">
+            <h2>Your Referral Rewards</h2>
+            <div class="rewards-grid">
+                <div class="reward-tier"><h4>Starter</h4><p>₹500</p></div>
+                <div class="reward-tier"><h4>Growth</h4><p>₹1,000</p></div>
+                <div class="reward-tier"><h4>Domination</h4><p>₹2,000</p></div>
+            </div>
+        </div>
+
+        <div class="form-container" id="partnerForm">
+            <h3>Generate Your Code</h3>
+            <p>Fill out your details below. We will securely register your profile.</p>
+            
+            <form onsubmit="generateCode(event)">
+                <div class="form-grid">
+                    <div class="form-group full-width">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" required placeholder="e.g. Rahul Kamble">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" required placeholder="name@email.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number <span>(Optional)</span></label>
+                        <input type="tel" id="phone" placeholder="+91 00000 00000">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="area">Area Code / Pincode *</label>
+                        <input type="text" id="area" required placeholder="e.g. 400101">
+                    </div>
+                    <div class="form-group">
+                        <label for="city">City *</label>
+                        <input type="text" id="city" required placeholder="e.g. Mumbai">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="district">District *</label>
+                        <input type="text" id="district" required placeholder="e.g. Mumbai Suburban">
+                    </div>
+                    <div class="form-group">
+                        <label for="state">State *</label>
+                        <input type="text" id="state" required placeholder="e.g. Maharashtra">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="insta">Instagram Handle <span>(Optional)</span></label>
+                        <input type="text" id="insta" placeholder="@yourhandle">
+                    </div>
+                    <div class="form-group">
+                        <label for="upi">UPI ID <span>(Optional - For Payouts)</span></label>
+                        <input type="text" id="upi" placeholder="name@bank">
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-submit" id="submitBtn">Generate My Code</button>
+            </form>
+        </div>
+
+        <div id="codeResult">
+            <h3>🎉 Your Unique Buddy Code is Ready!</h3>
+            <div class="generated-code" id="displayCode">CODE</div>
+            <p style="color: #047857; margin-bottom: 5px; font-weight: 600;">Your profile has been securely registered in our system.</p>
+            
+            <div class="share-box">
+                <label>Send this message to a business owner to easily pitch the offer:</label>
+                <textarea id="pitchMessage" readonly></textarea>
+                <button class="btn-copy" onclick="copyMessage()" id="copyBtn">📋 Copy Message to Clipboard</button>
+            </div>
+        </div>
+
+    </section>
+
+    <footer>
+        <p>Email: youronlinebuddy.in@gmail.com | Instagram: @YourOnlineBuddy.in</p>
+        <p>&copy; 2026 Your Online Buddy. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        async function generateCode(event) {
+            event.preventDefault(); // Stop page reload
+            
+            // 1. Get Values
+            let nameInput = document.getElementById('name').value.trim();
+            
+            // UI Update
+            let submitBtn = document.getElementById('submitBtn');
+            submitBtn.innerText = "Registering and Generating Code...";
+            submitBtn.disabled = true;
+            
+            // 2. Generate Code (First 4 letters of name + random 4 digits)
+            let prefix = nameInput.substring(0, 4).toUpperCase().replace(/[^A-Z]/g, 'BUDY');
+            if(prefix.length < 4) prefix = (prefix + "BUDY").substring(0, 4);
+            let randomNum = Math.floor(1000 + Math.random() * 9000);
+            let finalCode = prefix + "-" + randomNum;
+            
+            // 3. Send data silently to your email via Web3Forms
+            const formData = new FormData();
+            formData.append("access_key", "22982205-f9f5-405a-8e0a-f6db688bff01");
+            formData.append("subject", "🔥 NEW BUDDY REGISTRATION: " + finalCode);
+            formData.append("Generated Code", finalCode);
+            formData.append("Name", nameInput);
+            formData.append("Email", document.getElementById('email').value.trim());
+            formData.append("Phone", document.getElementById('phone').value.trim() || "Not Provided");
+            formData.append("Area Code / Pincode", document.getElementById('area').value.trim());
+            formData.append("City", document.getElementById('city').value.trim());
+            formData.append("District", document.getElementById('district').value.trim());
+            formData.append("State", document.getElementById('state').value.trim());
+            formData.append("Instagram", document.getElementById('insta').value.trim() || "Not Provided");
+            formData.append("UPI ID", document.getElementById('upi').value.trim() || "Not Provided");
+
+            try {
+                await fetch("https://api.web3forms.com/submit", {
+                    method: "POST",
+                    body: formData
+                });
+            } catch (error) {
+                console.error("Error sending data:", error);
+            }
+            
+            // 4. Update UI & Pitch Message
+            document.getElementById('displayCode').innerText = finalCode;
+            
+            let pitchText = `Hi! I noticed your business is growing and I thought you might want to upgrade your online presence.\n\nI've partnered with *Your Online Buddy*, a local web agency that builds premium, fast-loading websites for businesses. If you use my unique Partner Code: *${finalCode}*, they will include their complete Social Media Launch Kit for FREE with your website package!\n\nLet me know if you are interested and I'll send over their packages!`;
+            
+            document.getElementById('pitchMessage').value = pitchText;
+            
+            // Hide Form, Show Result
+            document.getElementById('partnerForm').style.display = 'none';
+            document.getElementById('codeResult').style.display = 'block';
+        }
+
+        // Copy to clipboard function
+        function copyMessage() {
+            let copyText = document.getElementById("pitchMessage");
+            copyText.select();
+            copyText.setSelectionRange(0, 99999); // For mobile devices
+            navigator.clipboard.writeText(copyText.value);
+            
+            let copyBtn = document.getElementById("copyBtn");
+            copyBtn.innerText = "✅ Message Copied!";
+            copyBtn.style.background = "#059669";
+            
+            setTimeout(() => {
+                copyBtn.innerText = "📋 Copy Message to Clipboard";
+                copyBtn.style.background = "#10b981";
+            }, 3000);
+        }
+    </script>
+</body>
+</html>

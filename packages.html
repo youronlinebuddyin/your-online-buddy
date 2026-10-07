@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Tags -->
+    <title>Website Packages & Pricing | Your Online Buddy</title>
+    <meta name="description" content="Transparent website pricing and packages for local businesses. Choose from our Starter, Growth, or Domination tiers to fit your budget and digital goals.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="logo.png?v=2">
+    <link rel="shortcut icon" href="logo.png?v=2">
+    
+    <!-- Google Font (Safe for GitHub Pages) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: #f9fafb;
+            color: #111827;
+        }
+
+        /* Navigation */
+        header {
+            background-color: #ffffff;
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        /* Updated Logo Class for Image Integration */
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #111827;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: #4f46e5;
+        }
+
+        .logo img {
+            height: 35px;
+            width: auto;
+            border-radius: 6px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #4b5563;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover, nav a.active {
+            color: #4f46e5;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #4f46e5;
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 8px;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #4338ca;
+        }
+
+        /* Page Header */
+        .page-header {
+            background-color: #111827;
+            color: #ffffff;
+            padding: 60px 5%;
+            text-align: center;
+            border-bottom: 6px solid #4f46e5;
+        }
+
+        .page-header h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+        }
+
+        .page-header p {
+            font-size: 1.1rem;
+            color: #d1d5db;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Pricing Grid */
+        .pricing-section {
+            padding: 60px 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 20px;
+        }
+
+        .pricing-card {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 40px 30px;
+            border: 1px solid #e5e7eb;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            text-align: center;
+            position: relative;
+        }
+
+        .pricing-card.premium {
+            border-color: #4f46e5;
+            box-shadow: 0 10px 20px rgba(79, 70, 229, 0.15);
+            transform: translateY(-5px);
+        }
+
+        .tier-name {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: #111827;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+        }
+
+        .premium .tier-name {
+            color: #4f46e5;
+        }
+
+        .tier-price {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #111827;
+            margin-bottom: 5px;
+        }
+
+        .tier-price span {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #6b7280;
+            margin-bottom: 20px;
+        }
+
+        .tier-desc {
+            background-color: #e0e7ff;
+            color: #4f46e5;
+            padding: 8px;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-bottom: 25px;
+        }
+
+        ul.features {
+            list-style: none;
+            text-align: left;
+            margin-bottom: 30px;
+        }
+
+        ul.features li {
+            padding: 10px 0;
+            border-bottom: 1px solid #f3f4f6;
+            color: #374151;
+            font-size: 0.95rem;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        ul.features li:last-child {
+            border-bottom: none;
+        }
+
+        ul.features li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #4f46e5;
+            font-weight: 900;
+        }
+
+        .btn-full {
+            display: block;
+            width: 100%;
+        }
+
+        .pricing-note {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #6b7280;
+            font-style: italic;
+            margin-bottom: 60px;
+        }
+
+        /* Add-ons Section */
+        .addons-section {
+            background-color: #ffffff;
+            border-radius: 12px;
+            padding: 40px;
+            border: 1px solid #e5e7eb;
+            margin-bottom: 60px;
+        }
+
+        .addons-section h3 {
+            font-size: 1.5rem;
+            color: #111827;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #f3f4f6;
+            padding-bottom: 10px;
+        }
+
+        .addons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .addon-item p {
+            color: #4b5563;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        .addon-item strong {
+            color: #111827;
+        }
+        
+        .regional-note {
+            font-size: 0.8rem;
+            color: #6b7280;
+            font-style: italic;
+            margin-top: 15px;
+            background: #f9fafb;
+            padding: 10px;
+            border-left: 3px solid #4f46e5;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #111827;
+            color: #9ca3af;
+            text-align: center;
+            padding: 40px 5%;
+        }
+
+        footer p {
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+            }
+        }
+    </style>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0QXER8HRQJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-0QXER8HRQJ');
+</script>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo">
+            <img src="logo.png?v=2" alt="Your Online Buddy Logo">
+            Your Online <span>Buddy</span>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="packages.html" class="active">Packages</a></li>
+                <!-- <li><a href="portfolio.html">Portfolio</a></li> -->
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="partner.html">Partner Program</a></li>
+            </ul>
+        </nav>
+        <a href="booking.html" class="btn">Contact Us</a>
+    </header>
+
+    <div class="page-header">
+        <h1>Website & Social Launch Packages</h1>
+        <p>Transparent pricing. No hidden fees. Choose the tier that fits your growth stage.</p>
+    </div>
+
+    <section class="pricing-section">
+        <div class="pricing-grid">
+            <!-- Starter -->
+            <div class="pricing-card">
+                <div class="tier-name">Starter</div>
+                <div class="tier-price">₹4,999<span>(₹4,499 without Social Kit)</span></div>
+                <div class="tier-desc">The Digital Flyer</div>
+                <ul class="features">
+                    <li>Single-Page Responsive Site</li>
+                    <li>Google My Business Setup</li>
+                    <li>Local Search SEO Setup</li>
+                    <li><strong>1-Year Web Support</strong></li>
+                    <li>Launch Kit: 3 Posts</li>
+                </ul>
+                <a href="booking.html" class="btn btn-full">Get Started</a>
+            </div>
+
+            <!-- Growth -->
+            <div class="pricing-card premium">
+                <div class="tier-name">Growth</div>
+                <div class="tier-price">₹9,999<span>(₹8,999 without Social Kit)</span></div>
+                <div class="tier-desc">The Professional Front</div>
+                <ul class="features">
+                    <li>Up to 5-Page Website</li>
+                    <li>WhatsApp Chat Integration</li>
+                    <li>Visitor Analytics Dashboard</li>
+                    <li><strong>1-Year Web Support</strong></li>
+                    <li>Launch Kit: 7 Posts + 1 Reel</li>
+                </ul>
+                <a href="booking.html" class="btn btn-full">Get Started</a>
+            </div>
+
+            <!-- Domination -->
+            <div class="pricing-card">
+                <div class="tier-name">Domination</div>
+                <div class="tier-price">₹17,999<span>(₹15,999 without Social Kit)</span></div>
+                <div class="tier-desc">The Full Engine</div>
+                <ul class="features">
+                    <li>Multi-Page + Booking UI</li>
+                    <li>Payment Gateway Setup</li>
+                    <li>Advanced Local SEO</li>
+                    <li><strong>1-Year Priority Support</strong></li>
+                    <li>Launch Kit: 12 Posts + 3 Reels</li>
+                </ul>
+                <a href="booking.html" class="btn btn-full">Get Started</a>
+            </div>
+        </div>
+        
+        <p class="pricing-note">* Note: Prices shown are base rates. Final pricing may vary depending upon the complexity and custom requirements of your project.</p>
+
+        <!-- Add-ons -->
+        <div class="addons-section">
+            <h3>📱 Monthly Social Add-Ons & Ads</h3>
+            <div class="addons-grid">
+                <div class="addon-item">
+                    <p><strong>Monthly Social Retainers:</strong></p>
+                    <p>Client-Provided Footage: ₹5,000/mo<br>
+                    We Shoot on Location: ₹10,000/mo</p>
+                </div>
+                <div class="addon-item">
+                    <p><strong>A La Carte Content:</strong></p>
+                    <p>Single Graphic Post: ₹400<br>
+                    Single Edited Reel: ₹800</p>
+                </div>
+                <div class="addon-item">
+                    <p><strong>Google Ads Management:</strong></p>
+                    <p>Setup from ₹2,500 + Ad Spend. We build and manage campaigns to guarantee traffic.</p>
+                </div>
+            </div>
+            <div class="regional-note">
+                * Note: Site visits for shoots are exclusively available in Mumbai, Navi Mumbai, and Thane regions (Coverage: Virar to Churchgate, CST to Thane, and up to Panvel).
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>Email: youronlinebuddy.in@gmail.com | Instagram: @YourOnlineBuddy.in</p>
+        <p>&copy; 2026 Your Online Buddy. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Work | Your Online Buddy</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+ 
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+        body { background-color: #f9fafb; color: #111827; }
+
+        header { background-color: #ffffff; padding: 20px 5%; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 10px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 100; }
+        .logo { font-size: 1.5rem; font-weight: 800; color: #111827; text-decoration: none; }
+        .logo span { color: #4f46e5; }
+        nav ul { list-style: none; display: flex; gap: 25px; }
+        nav a { text-decoration: none; color: #4b5563; font-weight: 600; font-size: 0.95rem; transition: color 0.3s; }
+        nav a:hover, nav a.active { color: #4f46e5; }
+        
+        .btn { display: inline-block; padding: 10px 20px; background-color: #4f46e5; color: #ffffff; text-decoration: none; font-weight: 600; border-radius: 8px; transition: background-color 0.3s; }
+        .btn:hover { background-color: #4338ca; }
+
+        .page-header { background-color: #111827; color: #ffffff; padding: 60px 5%; text-align: center; border-bottom: 6px solid #4f46e5; }
+        .page-header h1 { font-size: 2.5rem; font-weight: 800; margin-bottom: 15px; }
+        .page-header p { font-size: 1.1rem; color: #d1d5db; max-width: 600px; margin: 0 auto; }
+
+        .portfolio-section { padding: 60px 5%; max-width: 1200px; margin: 0 auto; }
+        
+        .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; }
+        
+        .project-card { background: #ffffff; border-radius: 12px; overflow: hidden; border: 1px solid #e5e7eb; box-shadow: 0 4px 6px rgba(0,0,0,0.05); transition: transform 0.3s; }
+        .project-card:hover { transform: translateY(-5px); box-shadow: 0 10px 15px rgba(0,0,0,0.1); }
+        
+        /* Placeholder styling for images */
+        .project-image { width: 100%; height: 220px; background-color: #e0e7ff; display: flex; align-items: center; justify-content: center; color: #4f46e5; font-size: 3rem; border-bottom: 1px solid #e5e7eb; }
+        .img-1 { background: linear-gradient(135deg, #e0e7ff, #c7d2fe); }
+        .img-2 { background: linear-gradient(135deg, #d1fae5, #a7f3d0); color: #059669; }
+        .img-3 { background: linear-gradient(135deg, #fef3c7, #fde68a); color: #d97706; }
+        
+        .project-content { padding: 25px; }
+        .project-category { font-size: 0.8rem; font-weight: 800; color: #4f46e5; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+        .project-title { font-size: 1.25rem; font-weight: 800; color: #111827; margin-bottom: 10px; }
+        .project-desc { color: #4b5563; font-size: 0.95rem; line-height: 1.5; margin-bottom: 20px; }
+        
+        .project-link { text-decoration: none; color: #111827; font-weight: 600; font-size: 0.95rem; border-bottom: 2px solid #4f46e5; padding-bottom: 2px; transition: color 0.3s; }
+        .project-link:hover { color: #4f46e5; }
+
+        footer { background-color: #111827; color: #9ca3af; text-align: center; padding: 40px 5%; margin-top: 40px; }
+        @media (max-width: 768px) { nav ul { display: none; } }
+    </style>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0QXER8HRQJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-0QXER8HRQJ');
+</script>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo">Your Online <span>Buddy</span></a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="packages.html">Packages</a></li>
+                <li><a href="portfolio.html" class="active">Portfolio</a></li>
+                <li><a href="partner.html">Partner Program</a></li>
+            </ul>
+        </nav>
+        <a href="mailto:youronlinebuddy.in@gmail.com" class="btn">Contact Us</a>
+    </header>
+
+    <div class="page-header">
+        <h1>Our Recent Work</h1>
+        <p>Explore how we have helped local shops transition from offline struggles to digital success.</p>
+    </div>
+
+    <section class="portfolio-section">
+        <div class="portfolio-grid">
+            
+            <!-- Project 1 -->
+            <div class="project-card">
+                <div class="project-image img-1">☕</div>
+                <div class="project-content">
+                    <div class="project-category">Cafe & Restaurant</div>
+                    <div class="project-title">The Local Brew</div>
+                    <div class="project-desc">A highly visual, 5-page Growth Package featuring a dynamic menu layout, embedded Google Maps, and Instagram integration.</div>
+                    <a href="#" class="project-link">View Details →</a>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="project-card">
+                <div class="project-image img-2">✂️</div>
+                <div class="project-content">
+                    <div class="project-category">Salon & Spa</div>
+                    <div class="project-title">Aura Styling Studio</div>
+                    <div class="project-desc">A full Domination Package complete with a digital service catalog, integrated appointment booking calendar, and WhatsApp lead capture.</div>
+                    <a href="#" class="project-link">View Details →</a>
+                </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="project-card">
+                <div class="project-image img-3">🛠️</div>
+                <div class="project-content">
+                    <div class="project-category">Auto Services</div>
+                    <div class="project-title">Elite Auto Care</div>
+                    <div class="project-desc">A fast-loading Starter Package acting as a digital flyer to capture emergency breakdown leads directly through local SEO.</div>
+                    <a href="#" class="project-link">View Details →</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <p>Email: youronlinebuddy.in@gmail.com | Instagram: @YourOnlineBuddy.in</p>
+        <p>&copy; 2026 Your Online Buddy. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
